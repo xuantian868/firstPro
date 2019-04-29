@@ -1,0 +1,28 @@
+<script>
+
+console.info('有3个函数可以把非数值转换为数值：Number(),parseInt(),parseFloat()');
+console.info('Number()用于任何数据类型，另外两个则专门用于将字符串转换为数值')
+ 
+var t = true, f = false;
+var n1 = Number(t),n2=Number(f);
+console.info('n1:'+n1+',n2:'+n2);
+
+var n = null;
+console.info(Number(n)); 
+n = undefined;
+console.info(Number(n)); 
+n="011";
+console.info(Number(n)); 
+n= "0xf";
+console.info('包含有效的十六进制格式，则将其转换为10进制整数值.'+Number(n)); 
+n="1.12";
+console.info(Number(n));
+n="";
+console.info('空字符串转换为0，'+Number(n));
+n="hello world";
+console.info('Number('+n+')='+Number(n));
+n="hell3";
+console.info('Number('+n+')='+Number(n));
+n="4hell3";
+console.info('Number('+n+')='+Number(n));
+</script>

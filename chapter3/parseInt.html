@@ -1,0 +1,45 @@
+<script>
+console.info('parseInt()函数在转换字符串时，更多的是看其是否符合数值模式。它会忽略字符串前面的空格，直至找到第一个非空格字符')
+console.info('如果第一个字符不是数字字符，parseInt()就会返回 NaN');
+console.info('如果第一个字符是数字字符，parseInt()会继续解析第二个字符，直到解析完所有后续字符或者遇到了一个非数字字符。例')
+var n = null;
+console.info(parseInt(n)); 
+n = undefined;
+console.info(parseInt(n)); 
+n='-13aa';
+console.info('parseInt('+n+')='+parseInt(n));
+n='a13aa';
+console.info('parseInt('+n+')='+parseInt(n));
+n="011";
+console.info('parseInt('+n+')='+parseInt(n));
+n= "0xf";
+console.info('包含有效的十六进制格式，则将其转换为10进制整数值.'+parseInt(n)); 
+n="1.12";
+console.info(parseInt(n));
+n="";
+console.info('空字符串转换为0，'+parseInt(n));
+n="hello world";
+console.info('parseInt('+n+')='+parseInt(n));
+n="hell3";
+console.info('parseInt('+n+')='+parseInt(n));
+n="4hell3";
+console.info('parseInt('+n+')='+parseInt(n));
+console.info('如果字符串以"0x"开头且后跟数字字符，就会将其当作一个十六进制整数；');
+console.info('如果字符串以"0"开头且后跟数字字符，则会忽略0处理后面的数字');
+
+var num1 = parseInt("1234blue"); // 1234
+console.info('parseInt('+n+')='+parseInt(n));
+
+var num3 = parseInt("0xA"); // 10（十六进制数）
+console.info('parseInt('+num3+')='+parseInt(num3));
+n = parseInt(22.5); // 22
+console.info('parseInt('+n+')='+parseInt(n));
+n = parseInt("070"); // 70
+console.info('parseInt('+n+')='+parseInt(n));
+n = parseInt("70"); // 70（十进制数）
+console.info('parseInt('+n+')='+parseInt(n));
+n = parseInt("0xf"); // 15（十六进制数）
+console.info('parseInt('+n+')='+parseInt(n));
+n = parseInt("0xAF", 16); //175 
+console.info('parseInt('+n+')='+parseInt(n));
+</script>
