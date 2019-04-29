@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+  1.基本概念
+  区分大小写
+  标识符：第一个字符必须时一个字母、下划线或美元符号；其他字符可以时字母、小花仙、美元符号或书资
+  //单行注释
+  /*
+  *  多行（块级）注释
+  **/
+ "use strict" //严格模式
+  这行代码看起来像是字符串，而且也没有赋值给任何变量，但其实它是一个编译指示（pragma），
+用于告诉支持的 JavaScript 引擎切换到严格模式。这是为不破坏 ECMAScript 3 语法而特意选定的语法。
+在函数内部的上方包含这条编译指示，也可以指定函数在严格模式下执行：
+function doSomething(){ 
+ "use strict"; 
+ //函数体
+} 
+严格模式下，JavaScript 的执行结果会有很大不同，因此本书将会随时指出严格模式下的区别。支
+持严格模式的浏览器包括 IE10+、Firefox 4+、Safari 5.1+、Opera 12+和 Chrome。
+
+ECMAScript 的变量是松散类型的，所谓松散类型就是可以用来保存任何类型的数据。换句话说，
+每个变量仅仅是一个用于保存值的占位符而已。定义变量时要使用 var 操作符（注意 var 是一个关键
+字），后跟变量名（即一个标识符），如下所示：
+var message; 
+有一点必须注意，即用 var 操作符定义的变量将成为定义该变量的作用域中的局部变量。
+
+ECMAScript 中有 5 种简单数据类型（也称为基本数据类型）：Undefined、Null、Boolean、Number
+和 String。还有 1种复杂数据类型——Object，Object 本质上是由一组无序的名值对组成的。ECMAScript
+不支持任何创建自定义类型的机制，而所有值最终都将是上述 6 种数据类型之一。乍一看，好像只有 6
+种数据类型不足以表示所有数据；但是，由于 ECMAScript 数据类型具有动态性，因此的确没有再定义
+其他数据类型的必要了。
+
+鉴于 ECMAScript 是松散类型的，因此需要有一种手段来检测给定变量的数据类型——typeof 就
+是负责提供这方面信息的操作符。对一个值使用 typeof 操作符可能返回下列某个字符串：
+ "undefined"——如果这个值未定义；
+ "boolean"——如果这个值是布尔值；
+ "string"——如果这个值是字符串；
+ "number"——如果这个值是数值；
+ "object"——如果这个值是对象或 null；
+ "function"——如果这个值是函数
+var message = "some string"; 
+alert(typeof message); // "string" 
+alert(typeof(message)); // "string" 
+alert(typeof 95); // "number" 
+
+最基本的数值字面量格式是十进制整数，十进制整数可以像下面这样直接在代码中输入：
+var intNum = 55; // 整数
+除了以十进制表示外，整数还可以通过八进制（以 8 为基数）或十六进制（以 16 为基数）的字面值
+来表示。其中，八进制字面值的第一位必须是零（0），然后是八进制数字序列（0～7）。如果字面值中的
+数值超出了范围，那么前导零将被忽略，后面的数值将被当作十进制数值解析。请看下面的例子：
+var octalNum1 = 070; // 八进制的 56
+var octalNum2 = 079; // 无效的八进制数值——解析为 79
+var octalNum3 = 08; // 无效的八进制数值——解析为 8
+八进制字面量在严格模式下是无效的，会导致支持的 JavaScript 引擎抛出错误。
+十六进制字面值的前两位必须是 0x，后跟任何十六进制数字（0～9 及 A～F）。其中，字母 A～F
+可以大写，也可以小写。如下面的例子所示：
+P52
+数值、布尔值、对象和字符串值（没错，每个字符串也都有一个 toString()方法，该方法返回字
+符串的一个副本）都有 toString()方法。但 null 和 undefined 值没有这个方法。
+多数情况下，调用 toString()方法不必传递参数。但是，在调用数值的 toString()方法时，可
+以传递一个参数：输出数值的基数。默认情况下，toString()方法以十进制格式返回数值的字符串表
+示。而通过传递基数，toString()可以输出以二进制、八进制、十六进制，乃至其他任意有效进制格
+式表示的字符串值。下面给出几个例子：
+var num = 10; 
+alert(num.toString()); // "10" 
+alert(num.toString(2)); // "1010" 
+alert(num.toString(8)); // "12" 
+alert(num.toString(10)); // "10" 
+alert(num.toString(16)); // "a" 
+ </body>
+</html>
