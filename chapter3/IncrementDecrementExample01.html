@@ -1,0 +1,30 @@
+<script>
+console.info('只能操作一个值的操作符叫做一元操作符')
+var age = 29;
+++age;
+console.info('在这个例子中，前置递增操作符把 age 的值变成了 30（为 29 加上了 1）。实际上，执行这个前置递');
+console.info('增操作与执行以下操作的效果相同：');
+var age = 29;
+age = age + 1; 
+
+var age = 29;
+var anotherAge = --age +2;
+console.info('age:'+age);
+console.info('anotherAge:'+anotherAge);
+var num1 = 2;
+var num2 = 20;
+var num3 = --num1 + num2; // 等于 21
+var num4 = num1 + num2; // 等于 21
+console.info('num3:'+num3);
+console.info('num4:'+num4);
+
+console.info('后置型递增和递减操作符的语法不变（仍然分别是++和--），只不过要放在变量的后面而不是前面。');
+console.info('后置递增和递减与前置递增和递减有一个非常重要的区别，即递增和递减操作是在包含它们的语句被求');
+console.info('值之后才执行的。');
+var num1 = 2;
+var num2 = 20;
+var num3 = num1-- + num2; // 等于 22
+var num4 = num1 + num2; 
+console.info('num3:'+num3);
+console.info('num4:'+num4);
+</script>
